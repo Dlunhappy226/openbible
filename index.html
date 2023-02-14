@@ -13,22 +13,21 @@
     </article>
 </head>
 <body>
-    <div class="container">
-
     <h1>Openbible</h1>
+    <a href="http://dlun.tk" rel=nofollow>Main website</a>
+    <br>
+    
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" >
+            Books selector</button>
+        <ul class="dropdown-menu" id="booksList"></ul>
+    </div>
 
     <br>
 
-    <div class="row">
-    
-    <div class="container col" id="reader">Loading</div>
+    <div id="reader">Loading</div>
 
-    <div class="container col" id="navigation">
-        <ul class="list-group" id="booksList"></ul>
-    </div>
-
-    </div>
-
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="reader.js"></script>
 </body>
 </html>

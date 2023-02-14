@@ -27,13 +27,12 @@ if (book == null || book == ""){
 
 //Book chooser
 $.getJSON("bible/key_english.json", (data) => {
-    $("#booksList").append("<li class='list-group-item'>Old Testament</li>");
     var ot = true;
     $.each(data.resultset.keys, (key, x) => { 
         if (x.t == "NT" && ot) {
-            $("#booksList").append("<li class='list-group-item'>New Testament</li>");
+            $("#booksList").append("<li><hr class='dropdown-divider'></li>");
             ot = false;
         }
-         $("#booksList").append("<li class='list-group-item'><a href='?b="+x.b+"'>"+x.n+"<a/></li>");
+         $("#booksList").append("<li'><a href='?b="+x.b+"'class='dropdown-item' >"+x.n+"<a/></li>");
     });
 });
