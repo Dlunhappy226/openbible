@@ -7,7 +7,7 @@ const book = urlParams.get("b");
 if (book == null || book == ""){
     window.location.href = "?b=1";
 }else{
-    $.getJSON("bible/t_asv.json", (data) => {
+    $.getJSON("bible/t_kjv.json", (data) => {
         const startTime = Date.now();
         $("#reader").html("");
         $.each(data.resultset.row, (key, x) => {
