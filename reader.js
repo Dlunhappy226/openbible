@@ -19,7 +19,7 @@ if (book == null || book == ""){
         if (window.location.hash != ""){
             window.location = window.location.hash;
         }
-        console.log("Done loading ("+Math.floor((Date.now()-startTime)/1000)+" sec)")
+        console.log("Done loading ("+(Date.now()-startTime)+" ms)")
     });
 }
 
