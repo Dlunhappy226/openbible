@@ -36,3 +36,7 @@ $.getJSON("bible/key_english.json", (data) => {
          $("#booksList").append("<li'><a href='?b="+x.b+"'class='dropdown-item' >"+x.n+"<a/></li>");
     });
 });
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js")
+}
