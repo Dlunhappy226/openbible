@@ -1,7 +1,7 @@
 {
     "name": "Openbible",
     "short_name": "Openbible",
-    "start_url": "/?b=1",
+    "start_url": "/",
     "icons": [
         {
             "src": "/favicon.png",

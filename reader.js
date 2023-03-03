@@ -4,8 +4,13 @@ const urlParams = new URLSearchParams(queryString);
 
 const book = urlParams.get("b");
 
-if (book == null || book == ""){
-    window.location.href = "?b=1";
+if (book == null || book == "") {
+    visit = localStorage.getItem("history");
+    if (visit) {
+        location.href = visit
+    }else{
+        location.href = "?b=1"
+    }
 }else{
     $.getJSON("bible/t_kjv.json", (data) => {
         const startTime = Date.now();
@@ -19,6 +24,7 @@ if (book == null || book == ""){
         if (window.location.hash != ""){
             window.location = window.location.hash;
         }
+        localStorage.setItem("history", location.search + location.hash)
         console.log("Done loading ("+(Date.now()-startTime)+" ms)")
     });
 }
@@ -40,3 +46,7 @@ $.getJSON("bible/key_english.json", (data) => {
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js")
 }
+
+window.addEventListener("popstate", (event) => { 
+    localStorage.setItem("history", location.search + location.hash)
+});
