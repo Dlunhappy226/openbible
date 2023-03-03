@@ -38,5 +38,5 @@ $.getJSON("bible/key_english.json", (data) => {
 });
 
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
+    navigator.serviceWorker.register("/sw.js")
 }
