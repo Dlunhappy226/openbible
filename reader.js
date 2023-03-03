@@ -61,8 +61,8 @@ $("#top").click(event => {
 
 window.addEventListener("scroll", event => {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        $("#top").style.display = "block";
+        $("#top").css("display", "block");
     } else {
-        $("#top").style.display = "none";
+        $("#top").css("display", "none");
     }
 });
