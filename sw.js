@@ -9,6 +9,10 @@ const cacheFile = [
     "/bible/t_kjv.json",
 ];
 
+for (let x = 1; x < 67; x++) {
+    cacheFile.push("/b?=" + x)
+}
+
 self.addEventListener("install", event => {
     event.waitUntil(
         caches.open(cacheName).then(cache => {
