@@ -1,0 +1,17 @@
+{
+    "name": "Openbible",
+    "short_name": "Openbible",
+    "start_url": "/?b=1",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "size": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#FFFFFF",
+    "display": "fullscreen",
+    "orientation": "portrait"
+}
