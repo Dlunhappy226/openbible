@@ -77,3 +77,23 @@ window.addEventListener("scroll", event => {
         $("#top").css("display", "none");
     }
 });
+
+//Install button
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", event => {
+    deferredPrompt = event
+    if (!$("#install").length){
+        $("#github").after("&emsp;<a href='#' onclick='installPWA();' id='install'>Install</a>");
+    }
+});
+
+async function installPWA() {
+    if (deferredPrompt !== null) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === "accepted") {
+            deferredPrompt = null;
+        }
+    }
+}
