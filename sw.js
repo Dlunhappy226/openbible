@@ -3,10 +3,14 @@ const cacheFile = [
     "/",
     "/bootstrap/css/bootstrap.min.css",
     "/reader.css",
+    "reader.js",
     "/bootstrap/js/bootstrap.bundle.min.js",
     "/jquery-3.6.3.min.js",
     "/bible/key_english.json",
     "/bible/t_kjv.json",
+    "/bootstrap-icons/bootstrap-icons.css",
+    "/bootstrap-icons/fonts/bootstrap-icons.woff2?24e3eb84d0bcaf83d77f904c78ac1f47",
+    "/bootstrap-icons/fonts/bootstrap-icons.woff?24e3eb84d0bcaf83d77f904c78ac1f47",
 ];
 
 for (let x = 1; x < 67; x++) {

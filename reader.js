@@ -55,7 +55,8 @@ window.addEventListener("popstate", (event) => {
 
 //Back to top button
 $("#top").click(event => {
-    window.scrollTop()
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     localStorage.setItem("history", location.search);
 });
 
