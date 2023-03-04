@@ -1,15 +1,14 @@
 //EReader
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
+const path = location.pathname.split("/");
 
-const book = urlParams.get("b");
+const book = path[1];
 
 if (book == null || book == "") {
     const visit = localStorage.getItem("history");
     if (visit) {
         location.href = visit;
     }else{
-        location.href = "?b=1";
+        location.href = "/1";
     }
 }else{
     $.getJSON("bible/t_kjv.json", (data) => {
@@ -24,7 +23,7 @@ if (book == null || book == "") {
         if (window.location.hash != ""){
             window.location = window.location.hash;
         }
-        localStorage.setItem("history", location.search + location.hash);
+        localStorage.setItem("history", location.pathname + location.hash);
         console.log("Done loading (" + (Date.now()-startTime) + " ms)");
     });
 }
@@ -43,9 +42,9 @@ $.getJSON("bible/key_english.json", (data) => {
         }
         if(book == x.b) {
             $("#booksSelect").html(x.n)
-            $("#booksList").append("<li><a href='?b=" + x.b + "' class='dropdown-item active'>" + x.n + "<a/></li>");
+            $("#booksList").append("<li><a href='/" + x.b + "' class='dropdown-item active'>" + x.n + "<a/></li>");
         }else{
-            $("#booksList").append("<li><a href='?b=" + x.b + "' class='dropdown-item'>" + x.n + "<a/></li>");
+            $("#booksList").append("<li><a href='/" + x.b + "' class='dropdown-item'>" + x.n + "<a/></li>");
         }
     });
 });
@@ -59,7 +58,7 @@ if ("serviceWorker" in navigator) {
 
 //History record
 window.addEventListener("popstate", (event) => { 
-    localStorage.setItem("history", location.search + location.hash);
+    localStorage.setItem("history", location.pathname + location.hash);
 });
 
 
@@ -67,7 +66,7 @@ window.addEventListener("popstate", (event) => {
 $("#top").click(event => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    localStorage.setItem("history", location.search);
+    localStorage.setItem("history", location.pathname);
 });
 
 window.addEventListener("scroll", event => {

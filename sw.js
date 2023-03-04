@@ -15,7 +15,7 @@ const cacheFile = [
 ];
 
 for (let x = 1; x < 67; x++) {
-    cacheFile.push("/b?=" + x)
+    cacheFile.push("/" + x)
 }
 
 self.addEventListener("install", event => {
