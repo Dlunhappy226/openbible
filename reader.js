@@ -34,24 +34,34 @@ if (book == null || book == "") {
 //Book chooser
 $.getJSON("bible/key_english.json", (data) => {
     var ot = true;
+    $("#booksList").append("<li><a class='dropdown-item disabled'>Old Testament<a/></li>");
     $.each(data.resultset.keys, (key, x) => { 
         if (x.t == "NT" && ot) {
             $("#booksList").append("<li><hr class='dropdown-divider'></li>");
+            $("#booksList").append("<li><a class='dropdown-item disabled'>New Testament<a/></li>");
             ot = false;
         }
-         $("#booksList").append("<li'><a href='?b=" + x.b + "'class='dropdown-item' >" + x.n + "<a/></li>");
+        if(book == x.b) {
+            $("#booksSelect").html(x.n)
+            $("#booksList").append("<li'><a href='?b=" + x.b + "'class='dropdown-item active'>" + x.n + "<a/></li>");
+        }else{
+            $("#booksList").append("<li'><a href='?b=" + x.b + "'class='dropdown-item'>" + x.n + "<a/></li>");
+        }
     });
 });
+
 
 //Service worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
 }
 
+
 //History record
 window.addEventListener("popstate", (event) => { 
     localStorage.setItem("history", location.search + location.hash);
 });
+
 
 //Back to top button
 $("#top").click(event => {
