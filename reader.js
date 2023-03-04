@@ -94,6 +94,7 @@ async function installPWA() {
         const { outcome } = await deferredPrompt.userChoice;
         if (outcome === "accepted") {
             deferredPrompt = null;
+            $("#install").css("display", "none");
         }
     }
 }
