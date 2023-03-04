@@ -84,7 +84,7 @@ let deferredPrompt;
 window.addEventListener("beforeinstallprompt", event => {
     deferredPrompt = event
     if (!$("#install").length){
-        $("#github").after("&emsp;<a href='#' onclick='installPWA();' id='install'>Install</a>");
+        $("#github").after("&emsp;<a href='javascript:installPWA();' id='install'>Install</a>");
     }
 });
 
