@@ -1,7 +1,7 @@
 const cacheName = "openbible";
 const cacheFile = [
     "/",
-    "index.html",
+    "/index.html",
     "/bootstrap/css/bootstrap.min.css",
     "/reader.css",
     "reader.js",
