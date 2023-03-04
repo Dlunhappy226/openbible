@@ -72,7 +72,7 @@ $("#top").click(event => {
 
 window.addEventListener("scroll", event => {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        $("#top").css("display", "block");
+        //$("#top").css("display", "block");
     } else {
         $("#top").css("display", "none");
     }
