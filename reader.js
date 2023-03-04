@@ -43,9 +43,9 @@ $.getJSON("bible/key_english.json", (data) => {
         }
         if(book == x.b) {
             $("#booksSelect").html(x.n)
-            $("#booksList").append("<li'><a href='?b=" + x.b + "'class='dropdown-item active'>" + x.n + "<a/></li>");
+            $("#booksList").append("<li><a href='?b=" + x.b + "' class='dropdown-item active'>" + x.n + "<a/></li>");
         }else{
-            $("#booksList").append("<li'><a href='?b=" + x.b + "'class='dropdown-item'>" + x.n + "<a/></li>");
+            $("#booksList").append("<li><a href='?b=" + x.b + "' class='dropdown-item'>" + x.n + "<a/></li>");
         }
     });
 });
