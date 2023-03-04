@@ -77,6 +77,7 @@ window.addEventListener("scroll", event => {
     }
 });
 
+
 //Install button
 let deferredPrompt;
 
